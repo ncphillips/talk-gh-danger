@@ -48,3 +48,30 @@ jobs:
 ```
 
 Commit this file and push it to Github and then open the `Actions` tab. Shortly after an action will show up.
+
+## Step 3: Run Danger on Pull Requests
+
+```bash
+yarn add danger
+```
+
+```yaml
+name: 'Danger JS'
+
+# Run this workflow for pull requests
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the branch
+      - uses: actions/checkout@v1
+
+      # Run the Danger script
+      - name: Danger
+        uses: danger/danger-js@9.1.6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
