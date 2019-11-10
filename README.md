@@ -75,3 +75,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
+
+## Step 4: Check file's for a license header
+
+Dangerfile
