@@ -68,7 +68,9 @@ jobs:
     steps:
       # Checkout the branch
       - uses: actions/checkout@v1
-
+      # Install Deps
+      - name: Install
+        run: yarn install
       # Run the Danger script
       - name: Danger
         uses: danger/danger-js@9.1.6
